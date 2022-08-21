@@ -1,18 +1,15 @@
 # -*- coding: utf-8 -*-
 # !/usr/bin/env python
 """ Зачем нужно это поле? """
-import os
-
 from config import settings
 import discord
 from discord.ext import commands
-from Cybernator import Paginator as pag
 from discord.utils import get
 import json
 
 print("\n" + "Program started" + "\n")
 
-__version__ = "0.0.1"
+__version__ = "0.0.2"
 
 bot = commands.Bot(command_prefix=settings['prefix'], intents=discord.Intents.all())
 bot.remove_command("help")
@@ -36,7 +33,7 @@ async def __r2134oll(ctx):
                 await i.edit(nick=i.name)
 
 
-@bot.command(aliases=["test"])
+@bot.command(aliases=["send_roles"])
 async def __test(ctx):
     text = ""
     await ctx.channel.purge(limit=1)
@@ -61,9 +58,9 @@ async def __test(ctx):
 
 
 roles = {
-    "🧚‍♀️": 766295022764818452,
+    "♀": 766295022764818452,
+    "♂": 783504750540619796,
     "🚁": 857287073337966603,
-    "🦄": 783504750540619796,
     "🪑": 877568277101052014,
     "🦜": 877569386469265428
 }
@@ -95,6 +92,25 @@ async def on_raw_reaction_add(payload):
                     if role3 in member.roles:
                         await member.remove_roles(role3)
             await message.remove_reaction(emoji, member)
+
+
+@bot.command(aliases=["send_message"])
+async def __send_message(ctx):
+    await ctx.channel.purge(limit=1)
+    emb = discord.Embed(colour=discord.Color.from_rgb(47, 49, 54))
+    emb.set_image(url='https://cdn.discordapp.com/attachments/572705890524725248/856210141732143134/rules.png')
+    emb.add_field(
+        name="**Грядущие изменения правил сервера**",
+        value="Сегодня в _15:30_ был проведён совет по поводу смены правил на "
+              "сервере, вот частичный список изменений:\n\n"
+              "**·** Пункт 1.1 удалён\n**·** Пункт 3.1 не только не для ролей, но и для пользователей\n"
+              "**·** Пункт 1.6 удалён\nПравила (Discord Terms of Service)[https://discord.com/terms] и "
+              "(Discord Community Guidelines)[https://discord.com/guidelines]\n"
+              "**·** 1.9 18+ заменить на nsfw и добавить жестокий контент\nПункт 3.2 удалён\n"
+              "**·** Коммерческая деятельность без согласия администрации запрещена\n"
+              "**·** Администрация сама выбирает степень наказания"
+    )
+    await ctx.send(embed=emb)
 
 
 @bot.command(aliases=["send_rules"])
