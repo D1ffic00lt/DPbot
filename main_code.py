@@ -117,60 +117,62 @@ async def __send_message(ctx):
 @bot.command(aliases=["send_rules"])
 async def __send_the_rules(ctx):
     if ctx.author.id == 401555829620211723:
-        channel = bot.get_channel(572682163162578946)
+        # channel = bot.get_channel(572682163162578946)
+        channel = ctx
         emb = discord.Embed(colour=discord.Color.from_rgb(47, 49, 54))
         emb.set_image(url='https://cdn.discordapp.com/attachments/572705890524725248/856210141732143134/rules.png')
         await channel.send(embed=emb)
         emb = discord.Embed(title="Общие правила:", colour=discord.Color.from_rgb(47, 49, 54))
         emb.set_image(url="https://cdn.discordapp.com/attachments/572705890524725248/856210140923822091/main.png")
         emb.add_field(
-            name=u'\u200b',
-            value=f'**1.1** Запрещено злоупотребление ненормативной лексики.\n```Мут на 30 минут```', inline=False)
+            name=u"\u200b",
+            value=f'Мы стараемся придерживаться правил сообщества _'
+                  f'Discord Community Guidelines_ и _Discord Terms of Service_, '
+                  f'так что ознакомьтесь с ними\n\n'
+                  f'**·** [Discord Terms of Service](https://discord.com/terms)\n'
+                  f'**·** [Discord Community Guidelines](https://discord.com/guidelines)', inline=False)
         emb.add_field(
             name=u"\u200b",
-            value=f'**1.2** Запрещено оскорбление администрации.\n```Мут на 3 часа```', inline=False)
+            value=f'**1.1** Запрещено оскорбление администрации.\n```Мут на 3 часа```', inline=False)
         emb.add_field(
             name=u"\u200b",
-            value=f'**1.3** Запрещена реклама любых сторонних ресурсов.\n```Бан навсегда```', inline=False)
+            value=f'**1.2** Запрещена реклама любых сторонних ресурсов.\n```Бан навсегда```', inline=False)
         emb.add_field(
             name=u"\u200b",
-            value=f'**1.4** Запрещено распространение личной информации(без согласия).'
+            value=f'**1.3** Запрещено распространение личной информации(без согласия).'
                   f'\n```Предупреждение / Мут / Бан```',
             inline=False)
         emb.add_field(
             name=u"\u200b",
-            value=f'**1.5** Запрещено распространение багов сервера.\n```Предупреждение / Бан```',
+            value=f'**1.4** Запрещено распространение багов сервера.\n```Предупреждение / Бан```',
             inline=False)
         emb.add_field(
             name=u"\u200b",
-            value=f'**1.6** Запрещено массовое упоминание ролей без причины\n**Исключение: см. список в конце**'
-                  '\n```Предупреждение / Мут```',
-            inline=False)
-        emb.add_field(
-            name=u"\u200b",
-            value=f'**1.7** Запрещено разжигание ненависти к рассам, религиям, национальностям.\n'
+            value=f'**1.5** Запрещено разжигание ненависти к рассам, религиям, национальностям.\n'
                   f'```Предупреждение / Мут / Бан```',
             inline=False)
         emb.add_field(
             name=u"\u200b",
-            value=f'**1.8** Запрещены подстрекательства или призывы к нарушению правил сервера.\n'
+            value=f'**1.6** Запрещены подстрекательства или призывы к нарушению правил сервера.\n'
                   f'```Удаление сообщений / Мут / Бан```',
             inline=False)
         emb.add_field(
             name=u"\u200b",
-            value=f'**1.9** Запрещён +18 контент.\n```Удаление сообщений / Мут / Бан```',
+            value=f'**1.7** Запрещён NSFW контент.\n```Удаление сообщения / Мут / Бан```',
             inline=False)
-        # emb.add_field(
-        #     name=u"\u200b",
-        #     value=f'**1.4**\n``````',
-        #     inline=False)
+        emb.add_field(
+            name=u"\u200b",
+            value=f'**1.8** На сервере запрещена коммерческая деятельность без согласия администрации\n````Мут / Бан``',
+            inline=False)
         await channel.send(embed=emb)
         emb = discord.Embed(title="Правила голосовых каналов:", colour=discord.Color.from_rgb(47, 49, 54))
         emb.set_image(url="https://cdn.discordapp.com/attachments/572705890524725248/856210142817943552/voice.png")
         emb.add_field(
             name=u"\u200b",
-            value=f'**2.1** Запрещено неадекватное поведение в любых его проявлениях.\n**Исключение: см. список в '
-                  f'конце** '
+            value=f'**2.1** Запрещено неадекватное поведение в любых его проявлениях.\n'
+                  f'_Данное правило не распространяется на приватные каналы и'
+                  f' не является тяжёлым, ||все мы люди||, получить'
+                  f'бан за данное нарушение ПРАКТИЧЕСКИ невозможно._'
                   f'\n```Предупреждение / Мут / Бан```',
             inline=False)
         emb.add_field(
@@ -192,18 +194,18 @@ async def __send_the_rules(ctx):
         emb.set_image(url="https://cdn.discordapp.com/attachments/572705890524725248/856210185214361610/chat.png")
         emb.add_field(
             name=u"\u200b",
-            value=f'**3.1** Запрещено массовое упоминание ролей без причины\n**Исключение: см. список в конце**'
-                  '\n```Предупреждение / Мут```',
-            inline=False)
-        emb.add_field(
-            name=u"\u200b",
-            value=f'**3.1** Запрещена реклама других проектов/групп/каналов'
-                  '\n```Бан```',
+            value=f'**3.1** Запрещено массовое упоминание ролей или пользователей без причины\n'
+                  f'**Исключение: см. список в конце**'
+                  '\n```Предупреждение / Мут```'
+                  '_Данное правило не распространяется на администраторов и модераторов _',
             inline=False)
         emb.add_field(
             name=u"\u200b",
             value=f'**3.3** Запрещён флуд / спам\n**Исключение: см. список в конце**'
-                  '\n```Удаление сообщения / Предупреждение / Мут```',
+                  '\n```Удаление сообщения / Предупреждение / Мут```'
+                  f'_`3.3` Данное правило не распространяется на приватные каналы и '
+                  f'<#771762570288693258>_'
+            ,
             inline=False)
         await channel.send(embed=emb)
         emb = discord.Embed(title="Ссылка", colour=discord.Color.from_rgb(47, 49, 54))
@@ -217,28 +219,11 @@ async def __send_the_rules(ctx):
         emb.set_image(url="https://cdn.discordapp.com/attachments/572705890524725248/856223438237859880/note.png")
         emb.add_field(
             name=u"\u200b",
-            value='`1.6/3.1` Данные правила не распространяются '
-                  'на каналы: <#{}> <#{}> <#{}>, на роли-администраторы'
-                  '(выше <@&{}>) и <@&{}>'.format(767431134631297025,
-                                                  767670212941316107,
-                                                  773600185195692082,
-                                                  704292000429637712,
-                                                  767430108377907240), inline=False)
-        emb.add_field(
-            name=u"\u200b",
-            value=f'`2.1` Данное правило не распространяется на приватные каналы и'
-                  f' не является тяжёлым, ||все мы люди||, получить'
-                  f'бан за данное нарушение ПРАКТИЧЕСКИ невозможно.', inline=False)
-        emb.add_field(
-            name=u"\u200b",
-            value=f'`3.3` Данное правило не распространяется на приватные каналы и '
-                  f'<#771762570288693258>', inline=False)
-        emb.add_field(
-            name=u"\u200b",
             value=f'Правила и примечания будут обновляться <@401555829620211723>', inline=False)
         emb.add_field(
             name=u"\u200b",
-            value=f'```ЗАПРЕЩЕНО ЗЛОУПОТРЕБЛЯТЬ НЕДОЧЁТАМИ ПРАВИЛ```\n'
+            value=f'```diff\n- АДМИНИСТРАЦИЯ САМА ВЫБИРАЕТ СТЕПЕНЬ НАКАЗАНИЯ\n```\n'
+                  f'```diff\n- ЗАПРЕЩЕНО ЗЛОУПОТРЕБЛЯТЬ НЕДОЧЁТАМИ ПРАВИЛ\n```\n'
                   f'```diff\n- НЕЗНАНИЕ ПРАВИЛ НЕ ОСВОБОЖДАЕТ ОТ ОТВЕТСТВЕННОСТИ\n```')
         await channel.send(embed=emb)
 
@@ -266,7 +251,7 @@ async def __send_the_shop(ctx):
         channel = bot.get_channel(877570778676224050)
         emb = discord.Embed(colour=discord.Color.from_rgb(47, 49, 54))
         emb.set_image(url='https://cdn.discordapp.com/attachments/572705890524725248/877574119200284804/SHOP.png')
-        
+
 # @bot.event
 # async def on_command_error(ctx, error):
 #     """
