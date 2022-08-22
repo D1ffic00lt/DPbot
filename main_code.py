@@ -117,12 +117,13 @@ async def __send_message(ctx):
 @bot.command(aliases=["send_rules"])
 async def __send_the_rules(ctx):
     if ctx.author.id == 401555829620211723:
+        await ctx.channel.purge(limit=1)
         # channel = bot.get_channel(572682163162578946)
         channel = ctx
         emb = discord.Embed(colour=discord.Color.from_rgb(47, 49, 54))
         emb.set_image(url='https://cdn.discordapp.com/attachments/572705890524725248/856210141732143134/rules.png')
         await channel.send(embed=emb)
-        emb = discord.Embed(title="Общие правила:", colour=discord.Color.from_rgb(47, 49, 54))
+        emb = discord.Embed(title="Общие правила", colour=discord.Color.from_rgb(47, 49, 54))
         emb.set_image(url="https://cdn.discordapp.com/attachments/572705890524725248/856210140923822091/main.png")
         emb.add_field(
             name=u"\u200b",
@@ -162,7 +163,7 @@ async def __send_the_rules(ctx):
             inline=False)
         emb.add_field(
             name=u"\u200b",
-            value=f'**1.8** На сервере запрещена коммерческая деятельность без согласия администрации\n````Мут / Бан``',
+            value=f'**1.8** На сервере запрещена коммерческая деятельность без согласия администрации\n```Мут / Бан```',
             inline=False)
         await channel.send(embed=emb)
         emb = discord.Embed(title="Правила голосовых каналов:", colour=discord.Color.from_rgb(47, 49, 54))
@@ -171,7 +172,7 @@ async def __send_the_rules(ctx):
             name=u"\u200b",
             value=f'**2.1** Запрещено неадекватное поведение в любых его проявлениях.\n'
                   f'_Данное правило не распространяется на приватные каналы и'
-                  f' не является тяжёлым, ||все мы люди||, получить'
+                  f' не является тяжёлым, ||все мы люди||, получить '
                   f'бан за данное нарушение ПРАКТИЧЕСКИ невозможно._'
                   f'\n```Предупреждение / Мут / Бан```',
             inline=False)
@@ -182,12 +183,8 @@ async def __send_the_rules(ctx):
             inline=False)
         emb.add_field(
             name=u"\u200b",
-            value=f'**2.2** Запрещено использовать программы для изменения голоса.'
+            value=f'**2.2** Запрещено использовать программы для изменения голоса'
                   f'(Если это кому-то мешает).\n```Предупреждение / Мут```',
-            inline=False)
-        emb.add_field(
-            name=u"\u200b",
-            value=f'**2.3** Запрещена реклама других проектов/групп/каналов..\n```Бан```',
             inline=False)
         await channel.send(embed=emb)
         emb = discord.Embed(title="Правила текстовых каналов:", colour=discord.Color.from_rgb(47, 49, 54))
@@ -195,17 +192,15 @@ async def __send_the_rules(ctx):
         emb.add_field(
             name=u"\u200b",
             value=f'**3.1** Запрещено массовое упоминание ролей или пользователей без причины\n'
-                  f'**Исключение: см. список в конце**'
-                  '\n```Предупреждение / Мут```'
-                  '_Данное правило не распространяется на администраторов и модераторов _',
+                  '_Данное правило не распространяется на администраторов и модераторов _'
+                  '\n```Предупреждение / Мут```',
             inline=False)
         emb.add_field(
             name=u"\u200b",
-            value=f'**3.3** Запрещён флуд / спам\n**Исключение: см. список в конце**'
-                  '\n```Удаление сообщения / Предупреждение / Мут```'
-                  f'_`3.3` Данное правило не распространяется на приватные каналы и '
+            value=f'**3.3** Запрещён флуд / спам\n'
+                  f'_Данное правило не распространяется на приватные каналы и '
                   f'<#771762570288693258>_'
-            ,
+                  '\n```Удаление сообщения / Предупреждение / Мут```',
             inline=False)
         await channel.send(embed=emb)
         emb = discord.Embed(title="Ссылка", colour=discord.Color.from_rgb(47, 49, 54))
