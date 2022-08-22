@@ -129,28 +129,28 @@ async def __send_the_rules(ctx):
             name=u"\u200b",
             value=f'Мы стараемся придерживаться правил сообщества _'
                   f'Discord Community Guidelines_ и _Discord Terms of Service_, '
-                  f'так что ознакомьтесь с ними\n\n'
+                  f'так что ознакомьтесь с ними.\n\n'
                   f'**·** [Discord Terms of Service](https://discord.com/terms)\n'
                   f'**·** [Discord Community Guidelines](https://discord.com/guidelines)', inline=False)
         emb.add_field(
             name=u"\u200b",
-            value=f'**1.1** Запрещено оскорбление администрации.\n```Мут на 3 часа```', inline=False)
+            value=f'**1.1** Запрещено оскорбление администрации.\n```Мут```', inline=False)
         emb.add_field(
             name=u"\u200b",
             value=f'**1.2** Запрещена реклама любых сторонних ресурсов.\n```Мут / Бан```', inline=False)
         emb.add_field(
             name=u"\u200b",
             value=f'**1.3** Запрещено распространение личной информации (без согласия).'
-                  f'\n```Предупреждение / Мут / Бан```',
+                  f'\n```Мут / Бан```',
             inline=False)
         emb.add_field(
             name=u"\u200b",
-            value=f'**1.4** Запрещено распространение багов сервера.\n```Предупреждение / Бан```',
+            value=f'**1.4** Запрещено распространение багов сервера.\n```Мут / Бан```',
             inline=False)
         emb.add_field(
             name=u"\u200b",
-            value=f'**1.5** Запрещено разжигание ненависти к рассам, религиям, национальностям.\n'
-                  f'```Предупреждение / Мут / Бан```',
+            value=f'**1.5** Запрещено разжигание ненависти к расам, религиям, национальностям.\n'
+                  f'```Мут / Бан```',
             inline=False)
         emb.add_field(
             name=u"\u200b",
