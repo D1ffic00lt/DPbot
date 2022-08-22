@@ -137,10 +137,10 @@ async def __send_the_rules(ctx):
             value=f'**1.1** Запрещено оскорбление администрации.\n```Мут на 3 часа```', inline=False)
         emb.add_field(
             name=u"\u200b",
-            value=f'**1.2** Запрещена реклама любых сторонних ресурсов.\n```Бан навсегда```', inline=False)
+            value=f'**1.2** Запрещена реклама любых сторонних ресурсов.\n```Мут / Бан```', inline=False)
         emb.add_field(
             name=u"\u200b",
-            value=f'**1.3** Запрещено распространение личной информации(без согласия).'
+            value=f'**1.3** Запрещено распространение личной информации (без согласия).'
                   f'\n```Предупреждение / Мут / Бан```',
             inline=False)
         emb.add_field(
@@ -161,15 +161,16 @@ async def __send_the_rules(ctx):
             name=u"\u200b",
             value=f'**1.7** Запрещён NSFW контент.\n'
                   f'_Данное правило не распространяется на_ '
-                  f'<#786797979583512586>\n'
+                  f'<#786797979583512586>.\n'
                   f'```Удаление сообщения / Мут / Бан```',
             inline=False)
         emb.add_field(
             name=u"\u200b",
-            value=f'**1.8** На сервере запрещена коммерческая деятельность без согласия администрации\n```Мут / Бан```',
+            value=f'**1.8** На сервере запрещена коммерческая деятельность без согласия администрации.'
+                  f'\n```Мут / Бан```',
             inline=False)
         await channel.send(embed=emb)
-        emb = discord.Embed(title="Правила голосовых каналов:", colour=discord.Color.from_rgb(47, 49, 54))
+        emb = discord.Embed(title="Правила голосовых каналов", colour=discord.Color.from_rgb(47, 49, 54))
         emb.set_image(url="https://cdn.discordapp.com/attachments/572705890524725248/856210142817943552/voice.png")
         emb.add_field(
             name=u"\u200b",
@@ -181,28 +182,28 @@ async def __send_the_rules(ctx):
             inline=False)
         emb.add_field(
             name=u"\u200b",
-            value=f'**2.2** Запрещено использование сторонних программ для воспроизведения звуков через микрофон'
+            value=f'**2.2** Запрещено использование сторонних программ для воспроизведения звуков через микрофон '
                   f'(Если это кому-то мешает).\n```Предупреждение / Мут```',
             inline=False)
         emb.add_field(
             name=u"\u200b",
-            value=f'**2.3** Запрещено использовать программы для изменения голоса'
+            value=f'**2.3** Запрещено использовать программы для изменения голоса '
                   f'(Если это кому-то мешает).\n```Предупреждение / Мут```',
             inline=False)
         await channel.send(embed=emb)
-        emb = discord.Embed(title="Правила текстовых каналов:", colour=discord.Color.from_rgb(47, 49, 54))
+        emb = discord.Embed(title="Правила текстовых каналов", colour=discord.Color.from_rgb(47, 49, 54))
         emb.set_image(url="https://cdn.discordapp.com/attachments/572705890524725248/856210185214361610/chat.png")
         emb.add_field(
             name=u"\u200b",
             value=f'**3.1** Запрещено массовое упоминание ролей или пользователей без причины\n'
-                  '_Данное правило не распространяется на администраторов и модераторов _'
+                  '_Данное правило не распространяется на администраторов и модераторов._'
                   '\n```Предупреждение / Мут```',
             inline=False)
         emb.add_field(
             name=u"\u200b",
             value=f'**3.2** Запрещён флуд / спам\n'
-                  f'_Данное правило не распространяется на приватные каналы и_ '
-                  f'<#771762570288693258>'
+                  f'_Данное правило не распространяется на приватные каналы и_  '
+                  f'<#771762570288693258>.'
                   '\n```Удаление сообщения / Предупреждение / Мут```',
             inline=False)
         await channel.send(embed=emb)
@@ -210,14 +211,14 @@ async def __send_the_rules(ctx):
         emb.set_image(url="https://cdn.discordapp.com/attachments/572705890524725248/856230192300032010/url.png")
         emb.add_field(
             name=u"\u200b",
-            value=f'Ссылка-приглашение на сервер\n'
+            value=f'Ссылка-приглашение на сервер.\n'
                   f'https://discord.gg/aYDknKX')
         await channel.send(embed=emb)
-        emb = discord.Embed(title="Примечание: ", colour=discord.Color.from_rgb(47, 49, 54))
+        emb = discord.Embed(title="Примечание ", colour=discord.Color.from_rgb(47, 49, 54))
         emb.set_image(url="https://cdn.discordapp.com/attachments/572705890524725248/856223438237859880/note.png")
         emb.add_field(
             name=u"\u200b",
-            value=f'Правила и примечания будут обновляться <@401555829620211723>', inline=False)
+            value=f'Правила и примечания будут обновляться <@401555829620211723> и командой.', inline=False)
         emb.add_field(
             name=u"\u200b",
             value=f'```diff\n- АДМИНИСТРАЦИЯ САМА ВЫБИРАЕТ СТЕПЕНЬ НАКАЗАНИЯ\n```\n'
