@@ -6,6 +6,7 @@ import discord
 from discord.ext import commands
 from discord.utils import get
 import json
+from dislash import InteractionClient, ButtonStyle, Button, ActionRow, Option, OptionType
 
 print("\n" + "Program started" + "\n")
 
@@ -13,6 +14,7 @@ __version__ = "0.0.2"
 
 bot = commands.Bot(command_prefix=settings['prefix'], intents=discord.Intents.all())
 bot.remove_command("help")
+inter_client = InteractionClient(bot, test_guilds=[751338987788042241])
 
 
 @bot.event
@@ -21,6 +23,24 @@ async def on_ready():
         None
     """
     print(f'Logged in as {bot.user.name}')
+
+
+@inter_client.slash_command(description="create")
+async def create(ctx):
+    category = await ctx.guild.create_category("private rooms")
+    create_channel = await ctx.guild.create_voice_channel(name=f'создать +', category=category, user_limit=1)
+    settings = await ctx.guild.create_text_channel(name="Управление", category=category)
+    msg = await settings.send(
+        embed=discord.Embed(title="dsfsdfsdfsdf"),
+        components=[Button(style=ButtonStyle.green, label="accept"),
+                    Button(style=ButtonStyle.green, label="reject")]
+    )
+    response = await bot.wait_for("button_click")
+    if response.channel == settings:
+        if response.component.label == "accept":
+            await response.respond(content="asdasd")
+        else:
+            await response.respond(content="not asdasd")
 
 
 @bot.command(aliases=["clear"])
@@ -221,9 +241,12 @@ async def __send_the_rules(ctx):
             value=f'Правила и примечания будут обновляться <@401555829620211723> и командой.', inline=False)
         emb.add_field(
             name=u"\u200b",
-            value=f'```diff\n- АДМИНИСТРАЦИЯ САМА ВЫБИРАЕТ СТЕПЕНЬ НАКАЗАНИЯ\n```\n'
+            value=f'```diff\n- АДМИНИСТРАЦИЯ САМА ВЫБИРАЕТ СТЕПЕНЬ НАКАЗАНИЯ И '
+                  f'ВПРАВЕ НАЗНАЧИТЬ НАКАЗАНИЕ ЖЕСТЧЕ ИЛИ МЯГЧЕ ПРЕДЛОЖЕННОГО\n```\n'
                   f'```diff\n- ЗАПРЕЩЕНО ЗЛОУПОТРЕБЛЯТЬ НЕДОЧЁТАМИ ПРАВИЛ\n```\n'
-                  f'```diff\n- НЕЗНАНИЕ ПРАВИЛ НЕ ОСВОБОЖДАЕТ ОТ ОТВЕТСТВЕННОСТИ\n```')
+                  f'```diff\n- НЕЗНАНИЕ ПРАВИЛ НЕ ОСВОБОЖДАЕТ ОТ ОТВЕТСТВЕННОСТИ\n```'
+                  f'```diff\n- АДМИНИСТРАТОРЫ ВЫШЕ <@762918421284782091> ВКЛЮЧИТЕЛЬНО '
+                  f'ОСВОБОЖДАЮТСЯ ОТ ОТВЕТСТВЕННОСТИ')
         await channel.send(embed=emb)
 
 
@@ -251,14 +274,14 @@ async def __send_the_shop(ctx):
         emb = discord.Embed(colour=discord.Color.from_rgb(47, 49, 54))
         emb.set_image(url='https://cdn.discordapp.com/attachments/572705890524725248/877574119200284804/SHOP.png')
 
-# @bot.event
-# async def on_command_error(ctx, error):
-#     """
-#
-#     :param ctx:
-#     :param error:
-#     """
-#     print(ctx, error)
+@bot.event
+async def on_command_error(ctx, error):
+    """
+
+    :param ctx:
+    :param error:
+    """
+    print(ctx, error)
 
 
 bot.run(settings['token'])
