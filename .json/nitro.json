@@ -1,0 +1,42 @@
+{
+    "basic": [
+        {
+            "taken": false,
+            "url": "gAAAAABjr_rCAm0w_aDx5120cws1ncI2Xvg5pGDCwuJfKKoIMbIr0Yr1BB-vaL86u9TaFBJTXOiusMxQUJ4Y18pZDB8jVNhC0wTTYh74XM5rrJXPk2XJO8KgfSCgrJuGyhk2q24pm0_GsXxQfb29_ypXs3VwFUzqaA==",
+            "used": false,
+            "winner_id": 0
+        },
+        {
+            "taken": false,
+            "url": "gAAAAABjr_qWGItv9fwKFNiKifbFanTETaLnLca-JUqHxBY0hg1ZwXnM-VuODcUP39jxvxUEYWsHNnJDcG90a8sX8jngw5bBYUpA7EOEjf_WIBe4f4AqnBhGfbtd50uxwiFvNth1OmU9YlphylXAjaDYsjuWnGuBkw==",
+            "used": false,
+            "winner_id": 0
+        },
+        {
+            "taken": false,
+            "url": "gAAAAABjr_r1oLuBoQBZzR1_EgbZ1nycJkm3DrhI7QBuJGgU7315YKXS90hE8W-R_2nYS3lJPKnX4vhZl9wWay68ejHaSQeDDUkZw3nx4y8andc8sFGOk0N8FzDH_tu7Uu1lIwyHhehJ_F_X5T2zwitlI3TjENztpg==",
+            "used": false,
+            "winner_id": 0
+        }
+    ],
+    "classic": [
+        {
+            "taken": false,
+            "url": "gAAAAABjr_mvq8Lb_awxItEjYbMxS5gQvW2IUuJUz-Jo381jUo15l6tzc6CV24bnz8x9TKyAWOtWvp28_lphRlTZ7kzy71HNQ53PlB5MoTwjV7h6Q5WA-tquRHD6VeXNc-uaVgtBXQNk8Wp8q-tfVGGnQcNF12-83Q==",
+            "used": false,
+            "winner_id": 0
+        },
+        {
+            "taken": false,
+            "url": "gAAAAABjr_nmewWWflQjemMauwP3LN5-sorLFGxkJDFDKY6Y6y17KKZRgP3NuD0SDlzFbisZvQBIBpmzKyY0-N809Q8b4hFkFlk6bCV4tDDTIPhxpZS-YXxLfeWMq72Gbm9Gl-uLsIxVJumpY36cPZjEgO7SKSwJbQ==",
+            "used": false,
+            "winner_id": 0
+        },
+        {
+            "taken": false,
+            "url": "gAAAAABjr_oXEMRmVz8jgPbAzNjv4yxl-oA7lW8PJMIXfdn6chgimbRUYMaZ-c3KnON_g6N3Rp4G8xjJSrPojZVU3Vqm8sSGw7H5HqytPUjVFvw89LFiJyp1S3DNOMkbxOg1CWv_fdZFTZe8ru6Vuf29c8sgei_Nzw==",
+            "used": false,
+            "winner_id": 0
+        }
+    ]
+}

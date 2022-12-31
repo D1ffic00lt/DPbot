@@ -1,4 +1,3 @@
 __pycache__
-config.py
-ffmpeg.txt
-json
+key.dp
+*.DS_Store

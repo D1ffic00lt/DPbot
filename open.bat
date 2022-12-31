@@ -1,3 +1,3 @@
 @echo off
-    title DP Bot console
-    python C:\Users\user\Desktop\DPbot\main_code.py
+    title DPbot console
+    python C:\Users\user\Desktop\DPbot\main.py
