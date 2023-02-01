@@ -67,6 +67,22 @@ class Slash(commands.Cog):
             json.dump(self.data, file, sort_keys=True, indent=4)
         await inter.response.send_message("✅")
 
+    @app_commands.command(name="support")
+    @app_commands.guilds(493970394374471680)
+    async def __support(
+            self, inter: discord.Interaction,
+            topic: str, description: str,
+            member: discord.Member = None
+    ) -> None:
+        await inter.response.send_message("✅", ephemeral=True)
+        emb = discord.Embed(
+            title=f"{topic}",
+            color=0x2F3136,
+            description=f"{'member: -' if member is not None else f'member: {member.mention}'}"
+                        f"\n{description}"
+        )
+        await self.bot.get_channel(572705890524725248).send(embed=emb)
+
     @commands.command()
     async def sync(self, ctx: commands.context.Context, type_: str = "local"):
         if ctx.author.id == 401555829620211723:
